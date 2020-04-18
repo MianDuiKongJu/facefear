@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>js test</title>
+    <style>
+        #timeID{
+            background: black;
+            color:lime;
+            font-size:5em;
+            font-family: monospace;
+        }
+        div>p{
+            width:35%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>what :</h1>
+            <p id="timeID">Waiting for api response</p>
+            <button id="fresh" type="button">refresh page</button>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+//         for (var i = 0; i <= 10; i++) {
+//             (function(n){setTimeout(() => {
+//                 console.log(n);
+//                         }, i*1000)
+//             })(i)
+// }    
+         // document.querySelector('#fresh').onclick = function(){ document.querySelector('#timeID').innerText = (new Date)}
+         setInterval(()=>{ document.querySelector('#timeID').innerHTML = (new Date).toLocaleTimeString()},1000)
+        
+        const fn = (a)=>(b)=>b+a;
+        const fm = (a)=>function(b){
+            return b+a};
+        
+
+        
+    </script>
+ 
+
+</body>
+</html>
