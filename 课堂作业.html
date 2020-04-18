@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>class 4 JS</title>
+</head>
+<body>
+
+
+    <script>
+        
+        const flights = function(array){
+            if(array.length == 1){
+                console.log("direct")
+            }
+            else if (array.length == 2) {
+                console.log('1 stop')
+            }
+            else if(array.length >= 3){
+                let x = 0;
+                x = array.length - 1;
+                console.log(x +'stops')
+            }
+        }
+            let tax = 0;
+        const calculateMyTax = function(salary){
+            if(salary<0){
+                console.log('too poor to calculate')
+                
+            }
+            else if (salary<18200 && salary > 0) {
+                tax = salary * 0;
+                console.log('tax rate is 0%');
+                console.log('tax payable on this income is Nil');
+                console.log('you had paid $' + tax);
+            }
+            else if (salary<37000 && salary > 18200) {
+                tax = (salary - 18200) * 0.19;
+                console.log('tax rate is 19%');
+                console.log('tax payable on this income is 19c for each $1 over @18,200')
+                console.log('you had paid $' + tax);
+            }
+            else if (salary<90000 && salary > 37000){
+                tax = 3572 + (salary-37000) * 0.325;
+                console.log('tax rate is 32.5%');
+                console.log('tax payable on this income is $3,572 plus 32.5% of amounts over $37,000')
+                console.log('you had paid $' + tax);
+            }
+            else if (salary<180000 && salary > 90000){
+                tax = 20797 + (salary-90000) * 0.37;
+                console.log('tax rate is 37%');
+                console.log('tax payable on this income is $20,797 plus 37% of amounts over $90,000')
+                console.log('you had paid $' + tax);
+            }
+            else{
+                tax = 54096 + salary * 0.45;
+                tax = 54096 + (salary-180000) * 0.45
+                console.log('tax rate is 45%');
+                console.log('tax payable on this income is $54,096 plus 45% of amounts over $180,000')
+                console.log('you had paid $' + tax);
+            }
+        }
+    </script>
+</body>
+</html>
