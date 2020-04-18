@@ -21,7 +21,22 @@
                 console.log(x +'stops')
             }
         }
-            let tax = 0;
+        /*龙哥写的*/
+        /* for better !Reabable !Maintainable !Reuseable */
+        function getStops(flights) {
+            var length =  flights.length;
+
+            var hashMap = {
+                1:'direct'
+                2:'1 stop'
+            }
+            return hashMap[length] || (length - 1) + 'stops'
+            
+        }
+
+
+
+        let tax = 0;
         const calculateMyTax = function(salary){
             if(salary<0){
                 console.log('too poor to calculate')
@@ -58,6 +73,54 @@
                 console.log('tax payable on this income is $54,096 plus 45% of amounts over $180,000')
                 console.log('you had paid $' + tax);
             }
+        }
+
+
+
+
+        function getTax(income) {
+            const taxTable = [{
+                min: 0,
+                max: 18200,
+                rate: 0,
+                base: 0, 
+            }, {
+                min: 18201,
+                max: 37000,
+                rate: 0.21,
+                base: 0,
+            }, {
+                min: 37001,
+                max: 90000,
+                rate: 0.36,
+                base: 3572,
+            }, {
+                min: 90001,
+                max: 180000,
+                rate: 0.37,
+                base: 20797,
+            }, {
+                min: 180000,
+                rate: 0.45,
+                base: 54096,
+            }];
+
+            var result;
+
+            for (var i = 0; i < taxTable.length; i ++) {
+                const tax = taxTable[i];
+
+                if (income >= tax.min) {
+                    if (tax.max && income > tax.max) {
+                        continue;
+                    }
+
+                    result = (income - tax.min) * tax.rate + tax.base;
+                    break;
+                } 
+            }
+
+        return result;
         }
     </script>
 </body>
